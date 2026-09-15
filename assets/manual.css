@@ -192,3 +192,11 @@ button,summary{font-family:inherit}
 .hero-title .edition{margin-bottom:30px}
 .hero-kicker{margin:0 0 12px;color:#796453;font-size:20px;font-weight:500;line-height:1.5;letter-spacing:-.025em;word-break:keep-all}
 @media(max-width:850px){.hero-title .edition{margin-bottom:24px}.hero-kicker{font-size:17px;margin-bottom:10px}}
+/* A friendly, visible introduction to the video guide. */
+.hero-title .edition{margin-bottom:25px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:100%;margin:0 0 20px;padding:10px 15px 10px 11px;border-radius:14px 14px 14px 4px;background:#f7dfbf;color:#684326;font-size:18px;font-weight:500;line-height:1.5;letter-spacing:-.035em;box-shadow:0 2px 0 #e9cda9}
+.hero-kicker strong{font-weight:750;color:#563620}
+.kicker-play{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:#fff9ef;color:#8a4e28}
+.kicker-play svg{display:block;width:17px;height:17px;transform:translateX(-1px)}
+@media(max-width:850px){.hero-title .edition{margin-bottom:22px}.hero-kicker{font-size:16px;gap:8px;margin-bottom:17px;padding:9px 12px 9px 10px}.kicker-play{width:27px;height:27px;flex-basis:27px}}
+@media(max-width:360px){.hero-kicker{font-size:15px;padding-right:10px;gap:7px}}
