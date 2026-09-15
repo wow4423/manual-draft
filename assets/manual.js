@@ -69,5 +69,39 @@
       };
     });
   });
+  const introVideo = document.querySelector('.brand-intro-video');
+  const introCover = document.querySelector('.intro-cover');
+  const introError = document.querySelector('.intro-play-error');
+  if (introVideo && introCover) {
+    introCover.hidden = false;
+    introVideo.controls = false;
+    const showPlayer = () => {
+      const coverFocused = document.activeElement === introCover;
+      introCover.hidden = true;
+      introVideo.controls = true;
+      introError.hidden = true;
+      if (coverFocused) introVideo.focus();
+    };
+    introVideo.tabIndex = 0;
+    introVideo.addEventListener('playing', showPlayer);
+    introCover.addEventListener('click', async () => {
+      introCover.disabled = true;
+      try {
+        await introVideo.play();
+        showPlayer();
+      } catch {
+        showPlayer();
+        introError.textContent = '재생 버튼을 다시 눌러주세요. 연결이 끊겼다면 페이지를 새로고침해 주세요.';
+        introError.hidden = false;
+      } finally {
+        introCover.disabled = false;
+      }
+    });
+    introVideo.addEventListener('error', () => {
+      showPlayer();
+      introError.textContent = '영상을 불러오지 못했습니다. 연결을 확인한 뒤 페이지를 새로고침해 주세요.';
+      introError.hidden = false;
+    });
+  }
   update();
 })();

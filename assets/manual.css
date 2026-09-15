@@ -270,3 +270,19 @@ button,summary{font-family:inherit}
 .brand-film-status{bottom:24px;font-size:12px;color:#8a7763}
 .intro .start-routes{margin-top:16px}
 @media(max-width:850px){.intro .hero-head{min-height:0;margin-bottom:24px}.intro .hero-art{height:clamp(190px,36vw,260px)}.intro .hero-art img{max-height:100%}.brand-intro{border-radius:12px}.brand-intro-heading{padding:13px 15px;gap:10px}.brand-intro-heading h2{font-size:15px}.brand-intro-heading:before{height:15px;width:4px;flex-basis:4px}.brand-film-copy p{font-size:clamp(15px,3.2vw,24px)}.brand-film-status{bottom:12px;font-size:10px}.intro .start-routes{margin-top:12px}}
+
+.brand-intro-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f0e6d6;margin:0;border:0;border-radius:0}
+
+.intro-player{position:relative;background:#f0e6d6}
+.intro-cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;width:100%;height:100%;padding:24px;border:0;background:rgba(0,0,0,.38);color:#fffaf0;font:inherit;text-align:center;cursor:pointer;transition:background .2s ease}
+.intro-cover[hidden],.intro-play-error[hidden]{display:none}
+.intro-cover:hover{background:rgba(0,0,0,.46)}
+.intro-cover:focus-visible{outline:3px solid #efb66b;outline-offset:-6px}
+.intro-cover-play{display:grid;place-items:center;width:58px;height:58px;border:1px solid #ffffffaa;border-radius:50%;background:#ffffff18}
+.intro-cover-play svg{width:26px;height:26px;transform:translateX(-1px)}
+.intro-cover-copy{font-size:clamp(19px,2vw,28px);line-height:1.75;letter-spacing:-.035em;text-shadow:0 2px 8px #0005;word-break:keep-all}
+.intro-cover-copy strong{display:block;font-weight:750}
+.intro-cover-hint{font-size:13px;color:#fff3df}
+.intro-play-error{margin:0;padding:10px 16px;font-size:14px;color:#68452f;background:#fff4e4}
+@media(max-width:540px){.intro-cover{gap:10px;padding:14px 10px}.intro-cover-play{width:38px;height:38px}.intro-cover-play svg{width:21px;height:21px}.intro-cover-copy{font-size:clamp(13px,3.8vw,18px);line-height:1.7}.intro-cover-hint{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.intro-cover{transition:none}}
