@@ -188,3 +188,7 @@ button,summary{font-family:inherit}
 .section-number{font-size:20px;font-weight:700;letter-spacing:.12em;gap:20px;line-height:1.4}
 .section-number:before,.section-number:after{width:64px;height:2px;background:#b59678}
 @media(max-width:850px){.section-number{font-size:18px;gap:16px}.section-number:before,.section-number:after{width:44px;height:2px}}
+
+.hero-title .edition{margin-bottom:30px}
+.hero-kicker{margin:0 0 12px;color:#796453;font-size:20px;font-weight:500;line-height:1.5;letter-spacing:-.025em;word-break:keep-all}
+@media(max-width:850px){.hero-title .edition{margin-bottom:24px}.hero-kicker{font-size:17px;margin-bottom:10px}}
