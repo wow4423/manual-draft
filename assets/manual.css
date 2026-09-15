@@ -255,3 +255,18 @@ button,summary{font-family:inherit}
 .routes-intro+.start-routes{margin-top:0}
 @media(max-width:850px){.brand-intro{margin-top:4px}.brand-intro-heading{margin-bottom:11px;gap:10px}.brand-intro-heading h2{font-size:19px}.brand-film{border-radius:13px}.brand-film-label{left:16px;top:14px;font-size:8px}.brand-film-copy{padding:38px 12px}.brand-film-copy p{font-size:clamp(17px,3.6vw,28px)}.brand-film-rule{margin-bottom:12px;width:22px}.brand-film-status{bottom:12px;font-size:10px}.routes-intro{margin-top:24px;font-size:15px}}
 @media(max-width:360px){.brand-intro-heading h2{font-size:17px}.brand-intro-heading>span{font-size:12px}.brand-film-rule{margin-bottom:8px}.brand-film-copy p{font-size:16px}}
+
+/* Connect the opening title and film through one aligned, restrained surface. */
+.intro .hero-head{min-height:270px;margin-bottom:32px}
+.intro .hero-art{height:270px}.intro .hero-art img{max-height:260px}
+.brand-intro{max-width:none;margin:0;border:1px solid #dfd3c3;border-radius:16px;background:#fffaf2;box-shadow:0 5px 22px #60452d07;overflow:hidden}
+.brand-intro-heading{display:flex;align-items:center;margin:0;padding:16px 22px;background:#fffaf2}
+.brand-intro-heading:before{content:'';width:5px;height:18px;flex:0 0 5px;background:#af8253;border-radius:4px}
+.brand-intro-heading h2{font-size:17px;font-weight:650;letter-spacing:-.025em;line-height:1.6;color:#604b39}
+.brand-film{border:0;border-radius:0;box-shadow:none;background:radial-gradient(ellipse at 65% 35%,#fcf6eb,transparent 75%),#f0e6d6}
+.brand-film:before,.brand-film:after{display:none}
+.brand-film-copy p{font-size:clamp(20px,2vw,28px);line-height:1.8;color:#806951}
+.brand-film-copy strong{font-weight:650;color:#59402e}
+.brand-film-status{bottom:24px;font-size:12px;color:#8a7763}
+.intro .start-routes{margin-top:16px}
+@media(max-width:850px){.intro .hero-head{min-height:0;margin-bottom:24px}.intro .hero-art{height:clamp(190px,36vw,260px)}.intro .hero-art img{max-height:100%}.brand-intro{border-radius:12px}.brand-intro-heading{padding:13px 15px;gap:10px}.brand-intro-heading h2{font-size:15px}.brand-intro-heading:before{height:15px;width:4px;flex-basis:4px}.brand-film-copy p{font-size:clamp(15px,3.2vw,24px)}.brand-film-status{bottom:12px;font-size:10px}.intro .start-routes{margin-top:12px}}
