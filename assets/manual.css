@@ -202,3 +202,10 @@ button,summary{font-family:inherit}
 @media(max-width:360px){.hero-kicker{font-size:15px;padding-right:10px;gap:7px}}
 .task-context{margin:0 0 22px;color:#51463e;font-size:17px;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
 @media(max-width:850px){.task-context{font-size:16px;margin-bottom:18px}}
+/* Persistent, quiet return-to-top control. */
+.back-to-top{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:10;display:grid;place-items:center;width:48px;height:48px;border:1px solid #d7cbbb;border-radius:50%;background:#fffcf6;color:#402b23;box-shadow:0 3px 14px #402b2318;text-decoration:none;transition:background .18s ease,box-shadow .18s ease}
+.back-to-top svg{width:23px;height:23px}.back-to-top:hover{background:#f2e5d4;box-shadow:0 4px 18px #402b2324}.back-to-top:active{background:#e9dac6}
+.layout{padding-bottom:90px}
+@media(max-width:850px){.back-to-top{right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:46px;height:46px}.layout{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+@media print{.back-to-top{display:none}}
