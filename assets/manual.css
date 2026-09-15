@@ -336,3 +336,28 @@ button,summary{font-family:inherit}
 .access-notices .access-store-note{display:inline;margin:0;padding:0 0 0 5px;font-size:12px;font-weight:400;line-height:inherit;color:#8a735d}
 @media(max-width:1100px){.access-notices .crm-access{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:14px;align-content:stretch;align-items:start}.access-notices .crm-access-details{padding-left:34px}}
 @media(max-width:540px){.access-notices{margin-top:16px}.access-notices .crm-access-details{grid-template-columns:70px minmax(0,1fr);gap:20px}.access-notices .access-store-note{font-size:11px;padding-left:3px}}
+
+/* Compact translucent playback controls, independent of browser chrome. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.media-toolbar{position:absolute;z-index:5;left:50%;bottom:18px;transform:translateX(-50%);width:calc(100% - 44px);max-width:610px;padding:12px 14px 8px;border:1px solid #ffffff30;border-radius:18px;background:rgba(39,34,30,.84);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 8px 24px #0003;color:#fff7ed;transition:opacity .2s ease}
+.media-toolbar[hidden]{display:none}.media-toolbar.is-idle{opacity:0;pointer-events:none}
+.media-toolbar-row{display:flex;align-items:center;gap:5px;margin-top:5px;min-width:0}
+.media-toolbar button{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;border:0;border-radius:50%;background:none;color:inherit;cursor:pointer;padding:7px;font:inherit}
+.media-toolbar button[hidden]{display:none}.media-toolbar button:hover{background:#ffffff20}
+.media-toolbar svg{display:block;width:22px;height:22px}.media-toggle svg{width:24px;height:24px}
+.media-toolbar button:focus-visible,.media-toolbar select:focus-visible,.media-seek:focus-visible{outline:2px solid #ffd39a;outline-offset:2px}
+.media-rewind{position:relative}.media-rewind span{position:absolute;left:0;right:0;top:12px;font-size:8px;text-align:center;font-weight:700}
+.media-time{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums;color:#fff0df;margin-left:5px}
+.media-toolbar-space{flex:1;min-width:0}
+.media-rate select{font:inherit;font-size:12px;font-weight:650;border:0;border-radius:8px;padding:7px 3px;background:transparent;color:#fff7ed;cursor:pointer;width:58px;min-height:34px;color-scheme:dark}
+.media-rate option{background:#302921;color:#fff7ed}
+.media-seek{display:block;width:100%;height:18px;margin:0;padding:0;cursor:pointer;appearance:none;-webkit-appearance:none;background:transparent;--played:0%}
+.media-seek::-webkit-slider-runnable-track{height:3px;border-radius:4px;background:linear-gradient(to right,#f5cf9e var(--played),#ffffff42 var(--played))}
+.media-seek::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;margin-top:-4px;background:#fff5e6;border:0;border-radius:50%;box-shadow:0 1px 5px #0004}
+.media-seek::-moz-range-track{height:3px;border-radius:4px;background:#ffffff42}.media-seek::-moz-range-progress{height:3px;border-radius:4px;background:#f5cf9e}.media-seek::-moz-range-thumb{width:11px;height:11px;background:#fff5e6;border:0;border-radius:50%}
+.media-seek:disabled{opacity:.4;cursor:default}
+.video-player:fullscreen{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#000}
+.video-player:fullscreen video{width:100%;height:100%;max-height:100vh;object-fit:contain;border:0;border-radius:0;box-shadow:none}
+.video-player:fullscreen .media-toolbar{bottom:30px;max-width:700px}
+@media(max-width:540px){.media-toolbar{bottom:10px;width:calc(100% - 24px);padding:7px 9px 5px;border-radius:13px}.media-toolbar-row{gap:0;margin-top:0}.media-toolbar button{width:32px;height:32px;flex-basis:32px;padding:6px}.media-toolbar svg{width:20px;height:20px}.media-time{font-size:10px;margin-left:3px}.media-rate select{width:49px;font-size:11px;padding-left:2px;padding-right:0}.media-rewind span{top:10px}.media-toolbar .media-rewind{display:none}}
+@media(prefers-reduced-motion:reduce){.media-toolbar{transition:none}}
