@@ -361,3 +361,26 @@ button,summary{font-family:inherit}
 .video-player:fullscreen .media-toolbar{bottom:30px;max-width:700px}
 @media(max-width:540px){.media-toolbar{bottom:10px;width:calc(100% - 24px);padding:7px 9px 5px;border-radius:13px}.media-toolbar-row{gap:0;margin-top:0}.media-toolbar button{width:32px;height:32px;flex-basis:32px;padding:6px}.media-toolbar svg{width:20px;height:20px}.media-time{font-size:10px;margin-left:3px}.media-rate select{width:49px;font-size:11px;padding-left:2px;padding-right:0}.media-rewind span{top:10px}.media-toolbar .media-rewind{display:none}}
 @media(prefers-reduced-motion:reduce){.media-toolbar{transition:none}}
+
+/* Quiet account drawer at the bottom of the navigation rail. */
+.sidebar{display:flex;flex-direction:column;min-height:calc(100dvh - 68px)}
+.sidebar>.rail-logo,.sidebar>nav{flex-shrink:0}
+.account-panel{margin-top:auto;padding-top:22px;color:#6a5542}
+.account-panel>summary{display:flex;align-items:center;gap:9px;list-style:none;padding:13px 8px;border-top:1px solid #dfd5c8;font-size:13px;font-weight:600;cursor:pointer;color:#77614e}
+.account-panel>summary::-webkit-details-marker{display:none}
+.account-panel>summary>svg{width:17px;height:17px;flex:0 0 17px;color:#a08467}
+.account-chevron{margin-left:auto;transform:rotate(180deg);transition:transform .2s ease}.account-panel[open] .account-chevron{transform:rotate(0)}
+.account-panel>summary:hover{color:#493326}.account-content{padding:4px 10px 12px}
+.account-entry h3{margin:6px 0 8px;font-size:13px;font-weight:750;color:#493326}
+.account-entry dl{display:grid;gap:6px;margin:0}.account-entry dl>div{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;gap:8px}
+.account-entry dt{font-size:11px;color:#907b66}.account-entry dd{margin:0;font-size:13px;font-weight:650;color:#523d2d}
+.account-entry .credential-trigger{font-size:12px;min-height:28px;padding:0;border-bottom-color:#c8b59d}
+.account-entry+.account-entry{margin-top:16px;padding-top:10px;border-top:1px solid #e6ddd1}
+.account-entry small{display:block;margin-top:8px;font-size:10px;line-height:1.7;word-break:keep-all;color:#99836e}
+.account-entry .credential-tooltip{left:auto;right:0;transform:none;font-size:13px;padding:8px 10px}
+.account-entry .credential-tooltip:after{left:auto;right:20px}
+.mobile-nav .account-panel{margin:8px 0 0;padding:0}.mobile-nav .account-panel>summary{justify-content:initial;background:transparent;color:#77614e}
+.mobile-nav .account-panel>summary>span{border:0;background:none;padding:0;border-radius:0}.mobile-nav .account-panel>summary>span:after{content:none}
+@media(prefers-reduced-motion:reduce){.account-chevron{transition:none}}
+
+@media(max-width:850px){.sidebar{display:none}}
