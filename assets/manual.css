@@ -182,3 +182,5 @@ button,summary{font-family:inherit}
 @media(max-width:850px){.intro{padding-top:26px;padding-bottom:26px}.hero-head{gap:0;min-height:0;margin-bottom:20px}.hero-art{height:clamp(190px,36vw,260px)}.hero-art img{max-height:100%}.intro-placeholder{min-height:200px;padding:34px 16px 24px;border-radius:14px}.intro-placeholder h2{font-size:26px}.intro-placeholder p{font-size:14px}.start-routes{flex-direction:column;gap:8px;margin-top:14px}.start-routes a{flex:0 0 auto;min-height:62px;padding:13px 15px;grid-template-columns:22px minmax(0,1fr) 22px;gap:10px}.start-routes b{font-size:18px}.start-routes span{font-size:12px}}
 @media(max-width:360px){.start-routes a{padding:12px;gap:8px}.start-routes b{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.start-routes a{transition:none}}
+
+.edition{font-weight:600;letter-spacing:.18em}
