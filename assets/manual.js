@@ -104,5 +104,18 @@
       introError.hidden = false;
     });
   });
+  document.querySelectorAll('.credential-tip').forEach(tip => {
+    const trigger = tip.querySelector('.credential-trigger');
+    const bubble = tip.querySelector('.credential-tooltip');
+    const show = () => { bubble.hidden = false; trigger.setAttribute('aria-expanded', 'true'); };
+    const hide = () => { bubble.hidden = true; trigger.setAttribute('aria-expanded', 'false'); };
+    tip.addEventListener('mouseenter', show);
+    tip.addEventListener('mouseleave', () => { if (!tip.contains(document.activeElement)) hide(); });
+    tip.addEventListener('focusin', show);
+    tip.addEventListener('focusout', event => { if (!tip.contains(event.relatedTarget)) hide(); });
+    trigger.addEventListener('click', show);
+    tip.addEventListener('keydown', event => { if (event.key === 'Escape') hide(); });
+    document.addEventListener('pointerdown', event => { if (!tip.contains(event.target)) hide(); });
+  });
   update();
 })();

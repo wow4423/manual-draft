@@ -303,3 +303,22 @@ button,summary{font-family:inherit}
 .faq summary>span{flex:1 1 0%;min-width:0}
 .faq-question{flex:1 1 0%;min-width:0;word-break:keep-all;overflow-wrap:normal}
 .faq-mark{flex-shrink:0}
+
+.crm-access{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:20px;padding:22px 24px;background:#eee5d8;border-radius:12px;color:#503c2c}
+.crm-access-heading{display:flex;align-items:flex-start;gap:12px;min-width:0}
+.crm-access-heading>svg{width:22px;height:22px;flex:0 0 22px;margin-top:3px;color:#997045}
+.crm-access-heading h2{margin:0;font-size:17px;line-height:1.6;font-weight:720;letter-spacing:-.025em;color:#503c2c}
+.crm-access-heading p{margin:4px 0 0;font-size:14px;line-height:1.7;word-break:keep-all;color:#77624e}
+.crm-access-details{display:flex;flex-wrap:wrap;gap:14px 28px;margin:0;flex-shrink:0}
+.crm-access-details>div{display:grid;gap:3px}.crm-access-details dt{font-size:12px;color:#8a735d}.crm-access-details dd{margin:0;font-size:16px;font-weight:650;color:#493425;line-height:1.5}
+@media(max-width:1100px){.crm-access{align-items:flex-start;flex-direction:column;gap:16px}.crm-access-details{padding-left:34px}}
+@media(max-width:540px){.crm-access{margin-top:16px;padding:18px 16px}.crm-access-heading h2{font-size:16px}.crm-access-heading p{font-size:13px}.crm-access-details{gap:14px 24px}.crm-access-details dd{font-size:15px}}
+
+.credential-tip{position:relative;display:inline-block}
+.credential-trigger{display:inline-flex;align-items:center;gap:7px;padding:3px 0;border:0;border-bottom:1px dashed #b89a77;background:transparent;color:#69482c;font:inherit;font-size:15px;font-weight:650;cursor:pointer;line-height:1.6}
+.credential-trigger:hover{color:#422b1b}.credential-trigger:focus-visible{outline:2px solid #af8253;outline-offset:4px;border-radius:3px}
+.credential-tooltip{position:absolute;z-index:20;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);padding:10px 14px;border-radius:9px;background:#493326;color:#fff3df;box-shadow:0 5px 16px #38261926;font-size:15px;font-weight:550;line-height:1.5;white-space:nowrap;user-select:text;cursor:text}
+.credential-tooltip:after{content:'';position:absolute;top:100%;left:calc(50% - 5px);border:5px solid transparent;border-top-color:#493326}
+.credential-tooltip:before{content:'';position:absolute;left:0;right:0;top:100%;height:10px}
+.credential-tooltip[hidden]{display:none}
+@media(max-width:540px){.credential-trigger{min-height:36px}.credential-tooltip{left:auto;right:0;transform:none}.credential-tooltip:after{left:auto;right:20px}}
