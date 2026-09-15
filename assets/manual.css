@@ -239,7 +239,7 @@ button,summary{font-family:inherit}
 
 /* Opening brand film: reserve the final video ratio without a false play button. */
 .brand-intro{margin:8px auto 0;max-width:960px}
-.brand-intro-heading{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin:0 2px 14px}
+.brand-intro-heading{display:flex;align-items:baseline;justify-content:flex-start;gap:18px;margin:0 2px 14px}
 .brand-intro-heading h2{margin:0;color:#402b23;font-size:22px;font-weight:720;line-height:1.5;letter-spacing:-.035em;word-break:keep-all}
 .brand-intro-heading>span{flex-shrink:0;color:#826c58;font-size:13px}
 .brand-film{aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:18px;border:1px solid #dfceb8;background:radial-gradient(ellipse at 75% 22%,#fff9ed 0,transparent 58%),linear-gradient(135deg,#efdbc0,#f9eddb 52%,#dcc3a2);box-shadow:0 12px 30px #6843260c;color:#4a3023}
