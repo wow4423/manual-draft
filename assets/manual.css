@@ -155,3 +155,12 @@ button,summary{font-family:inherit}
 }
 @media(max-width:360px){.layout{padding:0 8px}.intro{padding:24px 16px}.section{padding-left:8px;padding-right:8px}.task-body{padding-left:11px;padding-right:11px}.callout{grid-template-columns:86px minmax(0,1fr);gap:7px}.callout b{width:86px;font-size:11px}h1{font-size:38px}}
 .lesson-video:fullscreen,.example-video:fullscreen{border:0;border-radius:0;box-shadow:none;background:#000;max-height:none;object-fit:contain}
+/* Readable notice typography without badge-shaped labels. */
+.callout{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:start;padding:10px 0;background:none;border:0}
+.callout b{display:flex;align-items:center;justify-content:flex-start;gap:8px;width:auto;min-height:28px;margin:0;padding:0;background:none;border-radius:0;color:#402b23;font-size:15px;font-weight:700;line-height:28px;letter-spacing:-.02em}
+.callout b span{display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px;width:20px;height:20px;line-height:20px;border-radius:50%;font-size:12px;font-weight:700}
+.complete b span{background:#e8eee4;color:#3b593d}.caution b span{background:#f7e8cc;color:#885315}
+.callout p{padding:0;margin:0;color:#51463e;font-size:16px;font-weight:400;line-height:28px;letter-spacing:-.015em;word-break:keep-all;overflow-wrap:anywhere}
+.exception summary{font-size:16px;font-weight:650;line-height:1.65;letter-spacing:-.015em;padding:15px 0;color:#443830}
+.exception p,.exception ol{font-size:16px;font-weight:400;line-height:1.85;color:#51463e;word-break:keep-all;overflow-wrap:anywhere}
+@media(max-width:540px){.callout{grid-template-columns:minmax(0,1fr);gap:3px;padding:10px 0}.callout b{width:auto;font-size:15px;margin:0}.callout p{padding-left:28px;font-size:16px;line-height:1.8}.exception summary{font-size:16px}.exception p,.exception ol{font-size:16px}}
