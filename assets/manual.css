@@ -184,3 +184,7 @@ button,summary{font-family:inherit}
 @media(prefers-reduced-motion:reduce){.start-routes a{transition:none}}
 
 .edition{font-weight:600;letter-spacing:.18em}
+/* More legible chapter markers. */
+.section-number{font-size:20px;font-weight:700;letter-spacing:.12em;gap:20px;line-height:1.4}
+.section-number:before,.section-number:after{width:64px;height:2px;background:#b59678}
+@media(max-width:850px){.section-number{font-size:18px;gap:16px}.section-number:before,.section-number:after{width:44px;height:2px}}

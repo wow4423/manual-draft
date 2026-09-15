@@ -44,5 +44,30 @@
   }, {passive:true});
   window.addEventListener('resize', update);
   document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => { mobile.open = false; }));
+  const disclosureAnimations = new WeakMap();
+  document.querySelectorAll('details.exception').forEach(details => {
+    const summary = details.querySelector('summary');
+    summary.addEventListener('click', event => {
+      if (!details.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      event.preventDefault();
+      const previous = disclosureAnimations.get(details);
+      const opening = previous ? !previous.opening : !details.open;
+      const from = details.getBoundingClientRect().height;
+      if (previous) previous.animation.cancel();
+      details.open = true;
+      const to = opening ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height;
+      details.style.overflow = 'hidden';
+      const animation = details.animate([{height: `${from}px`}, {height: `${to}px`}], {
+        duration: 240, easing: 'cubic-bezier(.2,.7,.2,1)'
+      });
+      disclosureAnimations.set(details, {animation, opening});
+      animation.onfinish = () => {
+        if (disclosureAnimations.get(details)?.animation !== animation) return;
+        details.open = opening;
+        details.style.overflow = '';
+        disclosureAnimations.delete(details);
+      };
+    });
+  });
   update();
 })();
