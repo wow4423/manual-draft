@@ -225,3 +225,14 @@ button,summary{font-family:inherit}
 .faq-mark{flex:0 0 16px;color:#9b795b;font-size:13px;font-weight:750}
 .exception .faq-answer{margin:0;padding:0 0 18px 26px;line-height:1.85}
 @media(max-width:540px){.menu-path{padding:12px}.exception .menu-path p{font-size:14px}.procedure-steps li{grid-template-columns:27px minmax(0,1fr);gap:9px}.step-number{width:27px;height:27px}.exception .faq-answer{padding-left:0}}
+
+/* A quiet accent for the POS workflow beside the tablet guide. */
+.exception.pos-appendix{background:#f7ead7;box-shadow:inset 3px 0 0 #bd8a50;border-radius:12px}
+.pos-appendix>summary{color:#654325;font-weight:750;padding:16px 0}
+.pos-title{display:flex;align-items:center;gap:11px;min-width:0}
+.pos-icon{width:32px;height:32px;flex:0 0 32px;padding:6px;border-radius:9px;background:#fff7e9;color:#936333}
+.pos-appendix>summary:after{background:#fff7e9;color:#79512d}
+.exception.pos-appendix:hover,.exception.pos-appendix[open]{background:#f4e5ce}
+.pos-appendix>.procedure-content{padding-top:4px}
+.pos-appendix>p{margin-top:0}
+@media(max-width:540px){.pos-title{gap:9px}.pos-icon{width:29px;height:29px;flex-basis:29px;padding:5px}.pos-appendix>summary{line-height:1.6}}
