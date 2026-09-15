@@ -297,3 +297,9 @@ button,summary{font-family:inherit}
 .lesson-player .intro-cover-copy{font-size:clamp(21px,2.4vw,34px)}
 @media(max-width:850px){.lesson-player>.video-cover{inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);border-radius:9px}}
 @media(max-width:540px){.intro-cover-play{width:46px;height:46px}.intro-cover-play svg{width:24px;height:24px}.cover-action{gap:5px}.intro-cover{gap:10px}.lesson-player .intro-cover-copy{font-size:clamp(17px,4.5vw,23px)}}
+
+/* Keep Korean word endings together in disclosure titles. */
+.exception summary{word-break:keep-all;overflow-wrap:normal}
+.faq summary>span{flex:1 1 0%;min-width:0}
+.faq-question{flex:1 1 0%;min-width:0;word-break:keep-all;overflow-wrap:normal}
+.faq-mark{flex-shrink:0}
