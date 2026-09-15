@@ -200,3 +200,5 @@ button,summary{font-family:inherit}
 .kicker-play svg{display:block;width:17px;height:17px;transform:translateX(-1px)}
 @media(max-width:850px){.hero-title .edition{margin-bottom:22px}.hero-kicker{font-size:16px;gap:8px;margin-bottom:17px;padding:9px 12px 9px 10px}.kicker-play{width:27px;height:27px;flex-basis:27px}}
 @media(max-width:360px){.hero-kicker{font-size:15px;padding-right:10px;gap:7px}}
+.task-context{margin:0 0 22px;color:#51463e;font-size:17px;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
+@media(max-width:850px){.task-context{font-size:16px;margin-bottom:18px}}
