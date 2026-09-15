@@ -286,3 +286,14 @@ button,summary{font-family:inherit}
 .intro-play-error{margin:0;padding:10px 16px;font-size:14px;color:#68452f;background:#fff4e4}
 @media(max-width:540px){.intro-cover{gap:10px;padding:14px 10px}.intro-cover-play{width:38px;height:38px}.intro-cover-play svg{width:21px;height:21px}.intro-cover-copy{font-size:clamp(13px,3.8vw,18px);line-height:1.7}.intro-cover-hint{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.intro-cover{transition:none}}
+
+/* Shared click-to-play covers for intro and every lesson. */
+.video-player{position:relative}
+.cover-action{display:flex;flex-direction:column;align-items:center;gap:9px}
+.intro-cover-play{width:68px;height:68px;background:#ffffff20}
+.intro-cover-play svg{width:30px;height:30px}
+.intro-cover-copy .intro-emphasis{color:#ffcf85;text-shadow:0 2px 8px #0009}
+.lesson-player>.video-cover{inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);border-radius:12px}
+.lesson-player .intro-cover-copy{font-size:clamp(21px,2.4vw,34px)}
+@media(max-width:850px){.lesson-player>.video-cover{inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);border-radius:9px}}
+@media(max-width:540px){.intro-cover-play{width:46px;height:46px}.intro-cover-play svg{width:24px;height:24px}.cover-action{gap:5px}.intro-cover{gap:10px}.lesson-player .intro-cover-copy{font-size:clamp(17px,4.5vw,23px)}}

@@ -69,10 +69,11 @@
       };
     });
   });
-  const introVideo = document.querySelector('.brand-intro-video');
-  const introCover = document.querySelector('.intro-cover');
-  const introError = document.querySelector('.intro-play-error');
-  if (introVideo && introCover) {
+  document.querySelectorAll('.video-player').forEach(player => {
+    const introVideo = player.querySelector('video');
+    const introCover = player.querySelector('.video-cover');
+    const introError = player.querySelector('.intro-play-error');
+    if (!introVideo || !introCover) return;
     introCover.hidden = false;
     introVideo.controls = false;
     const showPlayer = () => {
@@ -102,6 +103,6 @@
       introError.textContent = '영상을 불러오지 못했습니다. 연결을 확인한 뒤 페이지를 새로고침해 주세요.';
       introError.hidden = false;
     });
-  }
+  });
   update();
 })();
