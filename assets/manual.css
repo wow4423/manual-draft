@@ -209,3 +209,19 @@ button,summary{font-family:inherit}
 @media(max-width:850px){.back-to-top{right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:46px;height:46px}.layout{padding-bottom:84px}}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 @media print{.back-to-top{display:none}}
+
+/* Menu breadcrumb and clearly numbered actions inside animated disclosures. */
+.exception.procedure{background:#eee5d9}
+.procedure>summary{font-weight:750;color:#402b23}
+.procedure-content{padding:2px 0 20px}
+.menu-path{padding:14px 16px;background:#fffaf2;border-radius:9px}
+.menu-label{display:block;color:#80664f;font-size:12px;font-weight:700;letter-spacing:.02em;margin-bottom:5px}
+.exception .menu-path p{display:flex;flex-wrap:wrap;align-items:center;gap:5px 9px;margin:0;padding:0;font-size:15px;font-weight:650;line-height:1.7;color:#402b23}
+.menu-path i{font-style:normal;color:#ab8a69}
+.exception .procedure-steps{list-style:none;padding:16px 0 0;margin:0;display:grid;gap:15px}
+.procedure-steps li{display:grid;grid-template-columns:30px minmax(0,1fr);align-items:start;gap:12px;padding:0;margin:0;font-size:16px;line-height:1.75}
+.step-number{display:grid;place-items:center;width:30px;height:30px;background:#604533;color:#fff5e4;border-radius:50%;font-size:12px;font-weight:750;font-variant-numeric:tabular-nums}
+.faq summary>span{display:flex;align-items:baseline;gap:10px}
+.faq-mark{flex:0 0 16px;color:#9b795b;font-size:13px;font-weight:750}
+.exception .faq-answer{margin:0;padding:0 0 18px 26px;line-height:1.85}
+@media(max-width:540px){.menu-path{padding:12px}.exception .menu-path p{font-size:14px}.procedure-steps li{grid-template-columns:27px minmax(0,1fr);gap:9px}.step-number{width:27px;height:27px}.exception .faq-answer{padding-left:0}}
