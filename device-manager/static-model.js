@@ -9,6 +9,15 @@ window.StaticDemo=(()=>{
   if(!saved||saved.username!=='admin'||!Number.isFinite(saved.expiresAt)||saved.expiresAt<=Date.now()||saved.expiresAt>Date.now()+ttl){try{localStorage.removeItem(key)}catch{}fail('로그인이 필요하거나 만료되었습니다.')}
   return {user:{username:'admin',role:'ADMIN',store_id:'3',store_name:'주렁주렁 동탄점'}};
  }
+ const screenCatalog=[
+  '메인화면','주렁은행','쿠폰 사용/취소','쿠폰도구','여권취소',
+  '[퀘스트] QR태깅 미션 (미션명 : 모험의 시작)',
+  '[퀘스트] 사진촬영 미션 (미션명 : 서로 다른 3가지 깃털을 찾아줘~!)',
+  '[퀘스트] QR태깅 미션 (미션명 : 밤의 동물 탐정단)',
+  '[퀘스트] OX퀴즈 미션 (미션명 : 동물박사님의 퀴즈)',
+  '[퀘스트] 그림퀴즈 미션 (미션명 : 내가그린 기린그림 퀴즈)',
+  '미션 수동확인','주키퍼 본부','주렁맨'
+ ];
  function devices(store){
   const prefix=({'3':'DT','4':'HN','1':'YD','2':'GJ'})[store]||'DT';
   // Each branch has a different installed mix; optional devices are not faults.
@@ -36,7 +45,14 @@ window.StaticDemo=(()=>{
    [5,1,null,'unknown','unknown','unknown','unknown','주키퍼 본부']
   ];
   return (roster[store]||[]).map((caseIndex,i)=>{
-   const [floor,online,battery,power_source,qr_status,camera_status,printer_status,current_screen_label]=cases[caseIndex];
+   const [floor,online,battery,power_source,qr_status,camera_status,printer_status]=cases[caseIndex];
+   const screenMix={
+    '3':[8,6,9,0,3,0,1,10,5,7,2,4,11],
+    '4':[9,12,7,6,3,4,2,1,0],
+    '1':[10,5,8,6,9,3,0,1,2,4,11],
+    '2':[12,7,6,4,8,1]
+   };
+   const current_screen_label=screenCatalog[screenMix[store][i]];
    return {first_seen_at:new Date(Date.UTC(2026,7,1)+(i*2+Number(store))*86400000).toISOString(),device_id:store==='3'?ids[caseIndex]:prefix+'-'+(i+1),label:prefix+'태블릿'+String(i+1).padStart(2,'0'),store_id:store,floor:store==='3'?floor:1,status:'active',online,battery,power_source,charging:['ac','usb'].includes(power_source)&&battery<100,qr_status,camera_status,printer_status,current_screen_label,last_seen_at:new Date(Date.now()-(online?10000+i*1000:caseIndex===11?1800000:480000)).toISOString(),app:'tools',app_version:caseIndex===11?'1.1.20':'1.1.21',bridge_app_version:caseIndex===11?'1.1.20':'1.1.21',app_build_version:caseIndex===12?null:'1789366191',display_wake_time:({'3':'07:00','4':'09:00','1':'09:30','2':'10:00'})[store],display_sleep_time:({'3':'22:00','4':'21:00','1':'20:30','2':'20:00'})[store],display_schedule_timezone:'Asia/Seoul',_demo:true,_demo_case:caseIndex};
   });
  }
@@ -68,7 +84,7 @@ window.StaticDemo=(()=>{
   if(floor!==null&&(store==='3'?![4,5].includes(floor):floor!==1))fail(store==='3'?'동탄점 지도는 4층 또는 5층을 선택해 주세요.':'이 지점은 1층 전체 지도로 배치됩니다.',400);
   if(activeDevices(store).some(d=>d.device_id!==id&&d.label===label))fail('해당 지점에서 사용 중인 이름입니다.',409);
   const actualFloor=floor??(store==='3'?(Math.random()<.5?4:5):1),slot=Math.floor(Math.random()*4);
-  const samples=[{online:1,battery:84,power_source:'ac',charging:true,camera_status:'ok',printer_status:'disconnected',current_screen_label:'사진 촬영'},{online:1,battery:47,power_source:'battery',charging:false,camera_status:'disconnected',printer_status:'ok',current_screen_label:'QR 미션'},{online:1,battery:16,power_source:'battery',charging:false,camera_status:'error',printer_status:'disconnected',current_screen_label:'사진 촬영'},{online:0,battery:0,power_source:'battery',charging:false,camera_status:'disconnected',printer_status:'disconnected',current_screen_label:'서비스 메뉴'}];
+  const samples=[{online:1,battery:84,power_source:'ac',charging:true,camera_status:'ok',printer_status:'disconnected',current_screen_label:screenCatalog[6]},{online:1,battery:47,power_source:'battery',charging:false,camera_status:'disconnected',printer_status:'ok',current_screen_label:screenCatalog[5]},{online:1,battery:16,power_source:'battery',charging:false,camera_status:'error',printer_status:'disconnected',current_screen_label:screenCatalog[6]},{online:0,battery:0,power_source:'battery',charging:false,camera_status:'disconnected',printer_status:'disconnected',current_screen_label:screenCatalog[0]}];
   const anchors=store==='3'?(actualFloor===5?[[.2,.48],[.39,.4],[.55,.55],[.69,.61]]:[[.2,.43],[.4,.48],[.59,.39],[.64,.65]]):store==='4'?[[.24,.47],[.49,.35],[.66,.56],[.6,.72]]:store==='1'?[[.35,.51],[.56,.4],[.65,.62],[.72,.75]]:[[.22,.24],[.49,.28],[.7,.48],[.48,.72]];
   const [x,y]=anchors[Math.floor(Math.random()*anchors.length)];
   const updated={...record,status:'active',label,store_id:store,floor:actualFloor,approved_at:new Date().toISOString(),telemetry:samples[slot],placement:{x:x+(Math.random()-.5)*.04,y:y+(Math.random()-.5)*.04,floor:store==='3'?String(actualFloor):({'4':'Hanam','1':'Yeongdeungpo','2':'Gyeongju'})[store]}};

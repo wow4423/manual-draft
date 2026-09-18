@@ -1050,3 +1050,15 @@ html.overlay-document-scroll::-webkit-scrollbar{display:none;width:0}
 @media(prefers-reduced-motion:reduce){#toggleOpeningNotice .notice-expand{transition:none}}
 
 #openingNotice{cursor:pointer}.authenticated #openingNotice .telegram-message{box-sizing:border-box;overflow:hidden}.authenticated #openingNotice .telegram-devices{max-height:260px;overflow:auto;overscroll-behavior:contain}#openingNotice #toggleOpeningNotice{gap:0}
+/* Quest screen hierarchy shared by fleet cards, map popovers and device detail. */
+.screen-kind{display:flex;align-items:center;flex-wrap:wrap;gap:7px;min-width:0}
+.screen-quest-tag{display:inline-flex;flex:none;align-items:center;padding:2px 6px;border:1px solid #7cb8c33d;border-radius:5px;color:#9ccbd1;background:#79b7c012;font-size:11px;font-weight:550;line-height:18px;letter-spacing:0}
+.screen-mission{display:block;margin-top:7px;color:#b9cedb;font-size:15px;font-weight:450;line-height:1.55;letter-spacing:-.15px;white-space:normal;overflow-wrap:anywhere;word-break:keep-all}
+.authenticated .fleet-screen strong:has(.screen-kind){font-size:20px;line-height:28px;min-width:0}
+.authenticated .fleet-screen .screen-kind{justify-content:flex-start;text-align:left}
+.authenticated .fleet-screen .screen-mission{text-align:left}
+.authenticated .pin-screen b:has(.screen-kind){font-size:19px;line-height:27px}
+.authenticated .pin-screen .screen-mission{font-size:14px;line-height:1.55}
+#deviceRows .fd-screen>strong:has(.screen-kind){font-size:26px;line-height:35px}
+#deviceRows .fd-screen .screen-mission{font-size:18px;line-height:1.6;margin-top:8px}
+#deviceRows .fd-screen .screen-quest-tag{font-size:12px;line-height:20px;padding:2px 8px}
