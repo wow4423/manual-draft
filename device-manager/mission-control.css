@@ -204,7 +204,7 @@ body.authenticated{background:#10101e;background-image:radial-gradient(ellipse a
 .authenticated .map-pin.alarm-focused{z-index:35}
 .authenticated .map-pin.alarm-focused .pin-core{filter:drop-shadow(0 0 10px #acf4df);animation:alarm-locator 1.4s ease-in-out infinite}
 .authenticated .map-pin.alarm-focused .pin-label{display:block!important;opacity:1!important;visibility:visible!important;background:#252238eb;border:1px solid #b4e3d680;font-size:14px;color:#edfff9;transform:translateX(-50%)}
-.authenticated .map-pin.alarm-focused:after{opacity:1!important;border-color:#b3eddb!important;animation:alarm-ring 1.8s ease-out infinite}
+.authenticated .map-pin.alarm-focused:after{border-color:#b3eddb!important;animation:alarm-ring 1.8s ease-out infinite}
 @keyframes alarm-locator{0%,100%{filter:drop-shadow(0 0 4px #9aecd280)}50%{filter:drop-shadow(0 0 15px #acffe5);transform:translateY(-3px)}}
 @keyframes alarm-ring{from{transform:scale(.65);opacity:.8}to{transform:scale(2.3);opacity:0}}
 @media(min-width:1700px){.authenticated #overviewView{grid-template-columns:390px minmax(0,1fr);column-gap:55px}.authenticated main{padding-left:48px;padding-right:36px}.authenticated .alarm-entry{padding-top:20px;padding-bottom:25px}.authenticated .alarm-entry:after{top:28px}}
@@ -281,10 +281,10 @@ body.authenticated{background:#10101e;background-image:radial-gradient(ellipse a
 .authenticated .map-pin.alarm-focused .pin-core{transform:scale(1.45) translateY(-4px);transform-origin:50% 100%;animation:locator-beacon 1.6s ease-in-out infinite;filter:drop-shadow(0 0 12px #d0ffee)}
 .authenticated .map-pin.alarm-focused .refined-pin-body{stroke:#eefff8;stroke-width:2}
 .authenticated .map-pin.alarm-focused:before{content:'';position:absolute;display:block!important;left:50%;top:100%;width:88px;height:40px;border:2px solid #c1ffe5;border-radius:50%;background:#a1f4d326;box-shadow:0 0 28px #93e6c866,inset 0 0 18px #a2f9d633;transform:translate(-50%,-50%);opacity:1!important;animation:none!important;pointer-events:none;z-index:-1}
-.authenticated .map-pin.alarm-focused:after{content:'';position:absolute;display:block!important;left:50%;top:100%;width:88px;height:40px;border:1px solid #cbffe8;border-radius:50%;background:none;animation:locator-wave 2s ease-out infinite!important;pointer-events:none;z-index:-1}
+.authenticated .map-pin.alarm-focused:after{content:'';position:absolute;display:block!important;left:50%;top:100%;width:88px;height:40px;border:1px solid #cbffe8;border-radius:50%;background:none;animation:locator-wave 2.8s linear infinite!important;animation-delay:0s!important;pointer-events:none;z-index:-1}
 .authenticated .map-pin.alarm-focused .pin-label{top:-48px!important;bottom:auto!important;background:#343047fa;border:1px solid #ceffea;color:#f2fff9;font-size:14px;font-weight:550;padding:7px 12px;box-shadow:0 4px 22px #0007;z-index:3}
 @keyframes locator-beacon{0%,100%{filter:drop-shadow(0 0 7px #b6f6da)}50%{filter:drop-shadow(0 0 20px #ceffe9)}}
-@keyframes locator-wave{0%{transform:translate(-50%,-50%) scale(.8);opacity:.85}100%{transform:translate(-50%,-50%) scale(1.9);opacity:0}}
+@keyframes locator-wave{0%{transform:translate(-50%,-50%) scale(.72);opacity:0}18%{opacity:.65}65%{opacity:.22}100%{transform:translate(-50%,-50%) scale(1.9);opacity:0}}
 @media(prefers-reduced-motion:reduce){.authenticated .map-pin.alarm-focused .pin-core,.authenticated .map-pin.alarm-focused:after{animation:none!important}.authenticated .map-pin.alarm-focused:after{transform:translate(-50%,-50%) scale(1.35);opacity:.4!important}}
 
 /* SVG path repeats the exact pin silhouette; clipping never spills outside. */
