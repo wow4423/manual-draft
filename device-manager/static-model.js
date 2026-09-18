@@ -128,7 +128,7 @@ window.StaticDemo=(()=>{
   const url=new URL(route,'https://static.invalid');
   if(url.pathname==='/session/login'){
    let data;try{data=JSON.parse(options.body)}catch{fail('아이디와 비밀번호를 확인해 주세요.')}
-   if(data.username!=='admin'||data.password!=='demo2026')fail('아이디 또는 비밀번호가 올바르지 않습니다.');
+   if(data.username!=='admin'||data.password!=='wnfjdwnfjd2026')fail('아이디 또는 비밀번호가 올바르지 않습니다.');
    try{localStorage.setItem(key,JSON.stringify({username:'admin',expiresAt:Date.now()+ttl}))}catch{fail('브라우저 저장소를 사용할 수 없습니다. 사이트 저장 권한을 확인해 주세요.',400)}
    return session();
   }
