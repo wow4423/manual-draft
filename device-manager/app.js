@@ -259,7 +259,8 @@ function tickAlarms(){if(syncEventDate()&&user)renderAlarmFeed();if(!user||docum
 setInterval(tickAlarms,15000);
 
 function statusGroupCards(incidents){
- const stamp=stateSnapshotAt?new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(new Date(stateSnapshotAt)).replace('-','.'):'';
+ const parts=stateSnapshotAt?Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date(stateSnapshotAt)).map(p=>[p.type,p.value])):null;
+ const stamp=parts?parts.month+'/'+parts.day+' '+parts.hour+':'+parts.minute+':'+parts.second:'';
  const heading='<div class="status-snapshot"><span class="snapshot-dot"></span><time datetime="'+(stateSnapshotAt?new Date(stateSnapshotAt).toISOString():'')+'">'+stamp+' \uAE30\uC900</time></div>';
 
  if(!incidents.length)return heading+'<div class="status-clear"><span class="status-clear-dot"></span><strong>확인할 상태 없음</strong></div>';
